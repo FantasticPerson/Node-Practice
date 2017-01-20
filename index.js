@@ -35,6 +35,11 @@ app.locals.blog = {
 // 添加模板必需的三个变量
 app.use(flash());
 
+app.use(require('express-formidable')({
+    uploadDir:path.join(__dirname,'public/img'),
+    keepExtensions:true//保留后缀
+}));
+
 app.use(function (req, res, next) {
     res.locals.user = req.session.user;
     res.locals.success = req.flash('success').toString();
