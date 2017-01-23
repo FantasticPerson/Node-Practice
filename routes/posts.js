@@ -22,6 +22,11 @@ router.get('/',function(req,res,next){
     // res.send(req.flash());
 });
 
+router.get('/create', checkLogin, function(req, res, next) {
+    console.log('create wenzhang');
+    res.render('create');
+});
+
 // POST /posts 发表一篇文章
 router.post('/',checkLogin,function(req,res,next){
     var author = req.session.user._id;
