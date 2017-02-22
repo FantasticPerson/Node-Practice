@@ -11,20 +11,21 @@ var checkLogin = require('../middlewares/check').checkNotLogin;
 // eg:GET /posts?author=xxx
 router.get('/',function(req,res,next){
     var author = req.query.author;
+    console.log(req.query);
 
     PostModel.getPosts(author)
         .then(function (posts) {
+            console.log('render posts');
             res.render('posts', {
                 posts: posts
             });
         })
         .catch(next);
-    // res.send(req.flash());
 });
 
-router.get('/create', checkLogin, function(req, res, next) {
-    console.log('create wenzhang');
+router.get('/create/sdf', checkLogin, function(req, res, next) {
     res.render('create');
+    console.log('sdfsd');
 });
 
 // POST /posts 发表一篇文章
