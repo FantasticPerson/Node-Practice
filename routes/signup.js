@@ -8,7 +8,7 @@ var fs = require('fs');
 var sha1 = require('sha1');
 
 var checkNotLogin = require('../middlewares/check').checkNotLogin;
-var UserModel = require('../models/users')
+var UserModel = require('../models/users');
 
 // GET /signup 注册页
 router.get('/', checkNotLogin, function(req, res, next) {

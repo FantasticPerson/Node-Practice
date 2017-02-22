@@ -23,7 +23,7 @@ router.get('/',function(req,res,next){
         .catch(next);
 });
 
-router.get('/create/sdf', checkLogin, function(req, res, next) {
+router.get('/create', checkLogin, function(req, res, next) {
     res.render('create');
     console.log('sdfsd');
 });
